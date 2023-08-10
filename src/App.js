@@ -6,11 +6,11 @@ import RoomDetails from "./pages/RoomDetails";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Home />,
   },
   {
-    path: '/room/:id',
+    path: "/room/:id",
     element: <RoomDetails />,
   },
 ]);
