@@ -5,7 +5,7 @@ import KidsDropdown from "../components/KidsDropdown";
 import CheckIn from "../components/CheckIn";
 import CheckOut from "../components/CheckOut";
 import { RoomContext } from "../context/RoomContext";
-import { Facheck } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 import ScrollToTop from "../components/ScrollToTop";
 const RoomDetails = () => {
   const { rooms } = useContext(RoomContext);
@@ -48,9 +48,51 @@ const RoomDetails = () => {
               </div>
             </div>
           </div>
-          <div className="w-full h-full lg:w-[40%] bg-blue-300">
+          <div className="w-full h-full lg:w-[40%] bg-white">
+            <div className="py-8 px-6 bg-accent/20 mb-12">
+              <div className="flex flex-col space-y-4 mb-4">
+                 <h3>Your Reservation</h3>
+                 <div className="h-[60px]">
+                  <CheckIn/>
+                 </div>
+                 <div className="h-[60px]">
+                  <CheckOut/>
+                 </div>
+                 <div className="h-[60px]">
+                  <AdultsDropdown/>
+                 </div>
+                 <div className="h-[60px]">
+                  <KidsDropdown/>
+                 </div>
+              </div>
+              <button className="btn btn-lg btn-primary w-full">
+                book now for ${price}
+              </button>
+            </div>
             <div>
-              <h3>Your Reservation</h3>
+              <h3 className="h3">Hotel Rules</h3>
+              <p className="mb-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.Ea placeat eos sed 
+              voluptas unde veniam eligendi a. Quaerat molestiae hic omnis 
+              </p>
+              <ul className="flex flex-col gap-y-4">
+                <li className="flex items-center gap-x-4">
+                  <FaCheck/>
+                  Check-in:3:00 PM - 9:00 PM
+                </li>
+                <li className="flex items-center gap-x-4">
+                  <FaCheck/>
+                  Check-out: 10:10 AM
+                </li>
+                <li className="flex items-center gap-x-4">
+                  <FaCheck/>
+                  No Pets
+                </li>
+                <li className="flex items-center gap-x-4">
+                  <FaCheck/>
+                  No Smoking
+                </li>
+              </ul>
             </div>
           </div>
         </div>
