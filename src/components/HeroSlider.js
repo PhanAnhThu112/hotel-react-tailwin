@@ -28,12 +28,13 @@ const sildes = [
 
 const HeroSlider = () => {
   return (
-    <Swiper modules={[EffectFade,Autoplay]}
-    effect={'fade'} 
-    Loop={true}
-    autoplay={{delay:300,
-    disableOnInteraction: false}}
-    className="heroSlider h-[600px] lg:h-[860px]">
+    <Swiper
+      modules={[EffectFade, Autoplay]}
+      effect={"fade"}
+      Loop={true}
+      autoplay={{ delay: 300, disableOnInteraction: false }}
+      className="heroSlider h-[600px] lg:h-[860px]"
+    >
       {sildes.map((slide, index) => {
         const { title, bg, btnText } = slide;
         return (
@@ -50,9 +51,9 @@ const HeroSlider = () => {
                 {title}
               </h1>
               <div className="flex">
-                <button className="btn btn-lg btn-primary mx-auto">
+                <a href="#Rooms" className="btn btn-lg btn-primary mx-auto">
                   {btnText}
-                </button>
+                </a>
               </div>
             </div>
           </SwiperSlide>
