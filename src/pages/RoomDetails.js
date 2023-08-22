@@ -7,6 +7,8 @@ import CheckOut from "../components/CheckOut";
 import { RoomContext } from "../context/RoomContext";
 import { FaCheck } from "react-icons/fa";
 import ScrollToTop from "../components/ScrollToTop";
+import Headerhome from "../components/Headerhome";
+import Footerhome from "../components/Footerhome";
 const RoomDetails = () => {
   const { rooms } = useContext(RoomContext);
   const { id } = useParams();
@@ -16,7 +18,9 @@ const RoomDetails = () => {
   });
   const { name, description, facilities, imageLg, price } = room;
   return (
+    
     <section className="bg-white">
+      <Headerhome/>
       <div className="bg-room bg-cover bg-center h-[660px] relative flex justify-center items-center">
         <div className="absolute w-full h-full bg-black/70"></div>
         <h1 className="text-6xl text-white z-20 font-primary text-center ">
@@ -97,6 +101,7 @@ const RoomDetails = () => {
           </div>
         </div>
       </div>
+      <Footerhome/>
     </section>
   );
 };

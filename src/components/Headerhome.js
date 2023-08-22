@@ -32,7 +32,7 @@ const Headerhome = () => {
           <a href='#Spa' className='hover:text-accent transition'>Spa</a>
           <a href='#Contact' className='hover:text-accent transition'>Contact</a>
           <div className="flex items-center hover:text-accent transition px-10">
-            <Link to="/Login" className="flex items-center">
+            <Link to="/signin" className="flex items-center">
               <FaUser className="mr-2" /> {/* Login icon */}
             </Link>
             {/* Add the logout icon here when needed */}

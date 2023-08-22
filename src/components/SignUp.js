@@ -1,40 +1,64 @@
 import React, { useState } from "react";
 const SignUp = () => {
+  const [fullName, setFullName] = useState(""); // Thêm state cho Full Name
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
+  const [errorFullName, setErrorFullName] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
+  const [showModal, setShowModal] = useState(false); // Thêm state cho lỗi Full Name
 
   const handleSignUp = () => {
     if (!email && !password) {
-        setErrorEmail("Please enter your email");
-        setErrorPassword("Please enter your password");
-        return;
-      }
-    
-      if (!email) {
-        setErrorEmail("Please enter your email");
-        return;
-      }
-    
-      if (!password) {
-        setErrorPassword("Please enter your password");
-        return;
-      }
-    
-      // Xử lý xác minh email và mật khẩu ở đây
-      // Thay đổi logic xác minh tùy theo yêu cầu của bạn
-      if (email && password) {
-        // Đăng nhập thành công, thực hiện các thao tác cần thiết
-        console.log("Sign up successful");
-        setErrorEmail(""); // Xóa thông báo lỗi email nếu có
-        setErrorPassword(""); // Xóa thông báo lỗi mật khẩu nếu có
-      } else {
-        // Xác minh không thành công, hiển thị thông báo lỗi
-        setErrorEmail("Invalid email or password");
-        setErrorPassword("Invalid email or password");
-      }
-    };
+      setErrorEmail("Please enter your email");
+      setErrorPassword("Please enter your password");
+      setErrorFullName(fullName ? "" : "Please enter your full name");
+      setErrorConfirmPassword(
+        confirmPassword
+          ? password === confirmPassword
+            ? ""
+            : "Passwords do not match"
+          : "Please confirm your password"
+      );
+      return;
+    }
+
+    if (!email) {
+      setErrorEmail("Please enter your email");
+      return;
+    }
+
+    if (!password) {
+      setErrorPassword("Please enter your password");
+      return;
+    }
+    if (!fullName) {
+      setErrorFullName("Please enter your full name");
+      return;
+    }
+    if (!confirmPassword) {
+      setConfirmPassword("Please enter your full name");
+      return;
+    }
+    // Xử lý xác minh email và mật khẩu ở đây
+    // Thay đổi logic xác minh tùy theo yêu cầu của bạn
+    if (email && password) {
+      // Đăng nhập thành công, thực hiện các thao tác cần thiết
+      console.log("Sign up successful");
+      setErrorEmail(""); // Xóa thông báo lỗi email nếu có
+      setErrorPassword(""); // Xóa thông báo lỗi mật khẩu nếu có
+      setErrorFullName("");
+      setErrorConfirmPassword("");
+      setShowModal(true); // Hiển thị modal đăng nhập thành công
+    } else {
+      // Xác minh không thành công, hiển thị thông báo lỗi
+      setErrorEmail("Invalid email or password");
+      setErrorPassword("Invalid email or password");
+      setShowModal(false); // Ẩn modal nếu có
+    }
+  };
 
   return (
     <div className="relative min-h-screen">
@@ -46,7 +70,7 @@ const SignUp = () => {
       />
       <div className="absolute w-full h-full bg-black/70"></div>
       <div class="flex items-center justify-center min-h-screen bg-gray-100">
-        <div class="relative flex flex-col mt-24 md:mx-40 space-y-8 bg-white shadow-2xl rounded-2xl  md:flex-row md:space-y-0">
+        <div class="relative flex flex-col mt-10 md:mx-40 space-y-8 bg-white shadow-2xl rounded-2xl  md:flex-row md:space-y-0">
           <div class="flex flex-col justify-center p-8 md:p-16">
             <span class="mb-3 pr-8 text-5xl font-bold font-tertiary ">
               Sign Up
@@ -60,10 +84,20 @@ const SignUp = () => {
               </span>
               <input
                 type="text"
-                class="w-full p-2 border border-gray-300 rounded-xl placeholder:font-tertiary placeholder:text-gray-500"
+                value={fullName}
+                onChange={(e) => {
+                  setFullName(e.target.value);
+                  setErrorFullName("");
+                }}
+                className={`w-full p-2 border border-gray-300 rounded-xl placeholder:font-tertiary placeholder:text-gray-500 ${
+                  errorFullName ? "border-yellow-500" : ""
+                }`}
                 name="fullName"
                 id="fullName"
               />
+              {errorFullName && (
+                <div className="text-yellow-500 mt-2 ">{errorFullName}</div>
+              )}
             </div>
             <span className="mb-2 text-lg font-tertiary font-semibold">
               Email
@@ -113,19 +147,50 @@ const SignUp = () => {
               </span>
               <input
                 type="password"
+                value={confirmPassword}
+                onChange={(e) => {
+                  setConfirmPassword(e.target.value);
+                  setErrorConfirmPassword("");
+                }}
+                className={`w-full p-2 border border-gray-300 rounded-xl placeholder:font-tertiary placeholder:text-gray-500 ${
+                  errorConfirmPassword ? "border-yellow-500" : ""
+                }`}
                 name="confirmPass"
                 id="confirmPass"
-                class="w-full p-2 border border-gray-300 rounded-xl placeholder:font-tertiary placeholder:text-gray-500"
               />
+              {errorConfirmPassword && (
+                <div className="text-yellow-500 mt-2">
+                  {errorConfirmPassword}
+                </div>
+              )}
             </div>
+
             <button
               onClick={handleSignUp}
               className="w-full bg-black/90 font-tertiary text-white p-2 text-lg rounded-xl mb-6 hover:bg-accent hover hover:border hover:border-gray-300"
             >
-              Sign in
+              Sign Up
             </button>
             {/* ... */}
           </div>
+          {showModal && (
+            <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/60">
+              <div className="bg-white rounded-lg p-8">
+                <h3 className="text-2xl font-semibold mb-2">
+                  Sign Up Successful
+                </h3>
+                <p className="text-gray-600">
+                  You have successfully signed up. Welcome you !
+                </p>
+                <button
+                  className="bg-accent text-white px-4 py-2 mt-4 rounded-lg"
+                  onClick={() => setShowModal(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
           <div class="relative">
             <img
               src="background.png"

@@ -4,16 +4,17 @@ import Headerhome from "./components/Headerhome";
 import Footerhome from "./components/Footerhome";
 import Home from "./pages/Home";
 import RoomDetails from "./pages/RoomDetails";
-import Login from "./components/Login";
+import Signin from "./components/Signin";
 import SignUp from "./components/SignUp"
 const App = () => {
   return (
     <Router>
+      
       <Routes>
       <Route path="/header" element={<Headerhome/>} />
         <Route path="/" element={<Home />} />
         <Route path="/room/:id" element={<RoomDetails />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<Signin />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Footerhome" element={<Footerhome/>} />
       </Routes>
