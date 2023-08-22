@@ -29,6 +29,7 @@ module.exports = {
         room: "url('./assets/img/room.jpg')",
       },
     },
+    
   },
   plugins: [],
 };

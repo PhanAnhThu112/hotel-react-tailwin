@@ -1,26 +1,23 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import necessary components from react-router-dom
+import Headerhome from "./components/Headerhome";
+import Footerhome from "./components/Footerhome";
 import Home from "./pages/Home";
 import RoomDetails from "./pages/RoomDetails";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/room/:id",
-    element: <RoomDetails />,
-  },
-]);
+import Login from "./components/Login";
+import SignUp from "./components/SignUp"
 const App = () => {
   return (
-    <div>
-      <Header />
-      <RouterProvider router={router} />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+      <Route path="/header" element={<Headerhome/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/room/:id" element={<RoomDetails />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/Footerhome" element={<Footerhome/>} />
+      </Routes>
+    </Router>
   );
 };
 
