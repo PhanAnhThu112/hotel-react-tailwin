@@ -1,6 +1,8 @@
 import React from "react";
 import Headerservice from "../components/Headerservice";
 import Footerhome from "../components/Footerhome";
+import {motion} from 'framer-motion';
+import { plateVariants,staggerContainer,fadeIn } from '../variants';
 
 const Service = () => {
   return (
@@ -8,10 +10,9 @@ const Service = () => {
       <Headerservice />
       <div className="bg-slate-400/10 mt-20">
         <div
-          className=" lg:grid lg:grid-cols-2  grid grid-cols-1  mb-16 md:mb-24 
-         justify-center items-center bg-white xl:gap-12 lg:gap-8 gap-0 xl:px-[100px] lg:px-[40px] md:px-[30px] px-[20px]  py-[110px] "
-        >
-          <div class=" ">
+        className=" lg:grid lg:grid-cols-2  grid grid-cols-1  mb-16 md:mb-24 
+         justify-center items-center bg-white xl:gap-12 lg:gap-8 gap-0 xl:px-[100px] lg:px-[40px] md:px-[30px] px-[20px]  py-[110px] ">
+          <motion.div>
             <h6 class="text-5xl font-bold font-tertiary mb-10">HOTEL ADINA</h6>
             <div class="">
               <div class="mb-8 font-tertiary text-3xl ">
@@ -30,7 +31,7 @@ const Service = () => {
                 always free from repetition..
               </div>
             </div>
-          </div>
+          </motion.div>
           <div class="order-1 sm:order-none lg:py-0 ml-3 transition-transform transform scale-x-105 scale-y-105 mt-10">
             <img class="w-full h-full" src="about_us.jpg" alt="section 3" />
           </div>
@@ -79,7 +80,7 @@ const Service = () => {
         </div>
         <div className="flex justify-center items-center py-8 sm:py-12 md:py-16 lg:py-20">
           <button className="w-44 sm:w-52 h-14 sm:h-16 text-white bg-black py-2 sm:py-3 px-4 sm:px-6 font-tertiary 
-          rounded-sm font-medium hover:bg-accent text-lg sm:text-2xl transition duration-300 shadow">
+          rounded-sm font-medium hover:bg-accent text-lg sm:text-2xl transition duration-300 shadow hover:drop-shadow-md hov">
             Book Now
           </button>
         </div>

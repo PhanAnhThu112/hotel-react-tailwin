@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 const SignUp = () => {
   const [fullName, setFullName] = useState(""); // Thêm state cho Full Name
   const [email, setEmail] = useState("");
@@ -70,7 +71,7 @@ const SignUp = () => {
       />
       <div className="absolute w-full h-full bg-black/70"></div>
       <div class="flex items-center justify-center min-h-screen bg-gray-100">
-        <div class="relative flex flex-col mt-10 md:mx-40 space-y-8 bg-white shadow-2xl rounded-2xl  md:flex-row md:space-y-0">
+        <div class="relative flex flex-col mt-16 md:mx-40 space-y-8 bg-white shadow-2xl rounded-2xl  md:flex-row md:space-y-0">
           <div class="flex flex-col justify-center p-8 md:p-16">
             <span class="mb-3 pr-8 text-5xl font-bold font-tertiary ">
               Sign Up
@@ -78,7 +79,7 @@ const SignUp = () => {
             <span class="font-tertiary text-gray-400 mb-8 text-lg">
               Create a new account
             </span>
-            <div class="py-4">
+            <div>
               <span class="mb-2 text-lg font-tertiary font-semibold">
                 Full Name
               </span>
@@ -141,7 +142,7 @@ const SignUp = () => {
               <div className="text-yellow-500 mt-2">{errorPassword}</div>
             )}
 
-            <div class="py-4">
+            <div>
               <span class="mb-2 text-lg font-tertiary font-semibold">
                 Confirm Password
               </span>
@@ -167,10 +168,18 @@ const SignUp = () => {
 
             <button
               onClick={handleSignUp}
-              className="w-full bg-black/90 font-tertiary text-white p-2 text-lg rounded-xl mb-6 hover:bg-accent hover hover:border hover:border-gray-300"
+              className="w-full mt-8 bg-black/90 font-tertiary text-white p-2 text-lg rounded-xl mb-6 hover:bg-accent hover hover:border hover:border-gray-300"
             >
               Sign Up
             </button>
+            <div className="text-center font-tertiary text-3xl">
+            <Link to="/signin" className=" hover:text-sky-500 hover:underline">
+              <span className="mr-2" aria-label="Go back">
+                {" "}
+                &#8592;{" "}
+              </span>
+            </Link>
+          </div>
             {/* ... */}
           </div>
           {showModal && (

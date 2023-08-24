@@ -6,7 +6,6 @@ import CheckIn from "../components/CheckIn";
 import CheckOut from "../components/CheckOut";
 import { RoomContext } from "../context/RoomContext";
 import { FaCheck } from "react-icons/fa";
-import ScrollToTop from "../components/ScrollToTop";
 import Headerhome from "../components/Headerhome";
 import Footerhome from "../components/Footerhome";
 const RoomDetails = () => {
