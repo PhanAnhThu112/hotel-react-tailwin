@@ -34,7 +34,7 @@ const SeeRoom = () => {
 
         <div className="container mx-auto lg:px-0">
           <div
-            className="grid grid-cols-1 max-w-sm mx-auto gap-[30px] 
+            className="grid grid-cols-1 max-w-sm mx-auto gap-[2rem] 
       lg:grid-cols-3 lg:max-w-none lg:mx-0"
           >
             {rooms.map((room) => {
