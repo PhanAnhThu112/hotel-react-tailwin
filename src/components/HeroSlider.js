@@ -51,7 +51,7 @@ const HeroSlider = () => {
                 {title}
               </h1>
               <div className="flex">
-                <a href="#Rooms" className="btn btn-lg btn-primary mx-auto">
+                <a href="/room" className="btn btn-lg btn-primary mx-auto">
                   {btnText}
                 </a>
               </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const SignUp = () => {
   const [fullName, setFullName] = useState(""); // Thêm state cho Full Name
   const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
   const [showModal, setShowModal] = useState(false); // Thêm state cho lỗi Full Name
+  const navigate = useNavigate();
 
   const handleSignUp = () => {
     if (!email && !password) {
@@ -59,6 +61,10 @@ const SignUp = () => {
       setErrorPassword("Invalid email or password");
       setShowModal(false); // Ẩn modal nếu có
     }
+  };
+  const handleCloseModal = () => {
+    setShowModal(false);
+    navigate("/home"); // Chuyển hướng về trang home
   };
 
   return (
@@ -173,13 +179,16 @@ const SignUp = () => {
               Sign Up
             </button>
             <div className="text-center font-tertiary text-3xl">
-            <Link to="/signin" className=" hover:text-sky-500 hover:underline">
-              <span className="mr-2" aria-label="Go back">
-                {" "}
-                &#8592;{" "}
-              </span>
-            </Link>
-          </div>
+              <Link
+                to="/signin"
+                className=" hover:text-sky-500 hover:underline"
+              >
+                <span className="mr-2" aria-label="Go back">
+                  {" "}
+                  &#8592;{" "}
+                </span>
+              </Link>
+            </div>
             {/* ... */}
           </div>
           {showModal && (
@@ -193,7 +202,7 @@ const SignUp = () => {
                 </p>
                 <button
                   className="bg-accent text-white px-4 py-2 mt-4 rounded-lg"
-                  onClick={() => setShowModal(false)}
+                  onClick={handleCloseModal}
                 >
                   Close
                 </button>

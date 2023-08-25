@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignin = () => {
     if (!email && !password) {
@@ -39,6 +40,10 @@ const Signin = () => {
       setErrorPassword("Invalid email or password");
       setShowModal(false); // Ẩn modal nếu có
     }
+  };
+  const handleCloseModal = () => {
+    setShowModal(false);
+    navigate("/home"); // Chuyển hướng về trang home
   };
 
   return (
@@ -142,7 +147,7 @@ const Signin = () => {
                 </p>
                 <button
                   className="bg-accent text-white px-4 py-2 mt-4 rounded-lg"
-                  onClick={() => setShowModal(false)}
+                  onClick={handleCloseModal}
                 >
                   Close
                 </button>
