@@ -77,7 +77,7 @@ const SignUp = () => {
       />
       <div className="absolute w-full h-full bg-black/70"></div>
       <div class="flex items-center justify-center min-h-screen bg-gray-100">
-        <div class="relative flex flex-col mt-16 md:mx-40 space-y-8 bg-white shadow-2xl rounded-2xl  md:flex-row md:space-y-0">
+        <div class="relative flex flex-col md:mx-40 space-y-8 bg-white shadow-2xl rounded-2xl  md:flex-row md:space-y-0">
           <div class="flex flex-col justify-center p-8 md:p-16">
             <span class="mb-3 pr-8 text-5xl font-bold font-tertiary ">
               Sign Up

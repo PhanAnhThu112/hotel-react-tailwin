@@ -47,7 +47,7 @@ const HeroSlider = () => {
               <div className="uppercase font-tertiary tracking-[6px] mb-5">
                 Just Enjoy and relax
               </div>
-              <h1 className="text-[32px] font-primary uppercase tracking-[2px] max-w-[920px] lg:text-[68px] leading-tight mb-6">
+              <h1 className="text-[28px] font-primary uppercase tracking-[2px] max-w-[920px] lg:text-[68px] leading-tight mb-6">
                 {title}
               </h1>
               <div className="flex">
