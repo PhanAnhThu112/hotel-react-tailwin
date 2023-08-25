@@ -120,7 +120,7 @@ const Aboutus = () => {
               class="order-1 sm:order-none transition-transform transform scale-x-105 scale-y-95 ml-3"
             >
               <motion.img
-                variants={fadeIn("right", "tween", 0.2, 1.8)}
+                variants={fadeIn("right", "tween", 0.2, 1.2)}
                 class=" "
                 src="about_2.jpg"
               />
