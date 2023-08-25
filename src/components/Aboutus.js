@@ -73,24 +73,34 @@ const Aboutus = () => {
                   There are many variations of passages of Lorem Ipsum
                   available, but the majority have suffered alteration in some
                   form, by injected humour, or randomised words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem Ipsum, you need to be sure there isn't anything
-                  embarrassing hidden in the middle of text. All the Lorem Ipsum
-                  generators on the Internet tend to repeat predefined chunks as
-                  necessary, making this the first true generator on the
-                  Internet. It uses a dictionary of over 200 Latin words,
+                  even slightly believable.
+                </div>
+                <div class="mb-8 font-tertiary text-3xl mr-5">
+                  It uses a dictionary of over 200 Latin words,
                   combined with a handful of model sentence structures, to
                   generate Lorem Ipsum which looks reasonable. The generated
                   Lorem Ipsum is therefore always free from repetition, injected
                   humour, or non-characteristic words etc.
+                </div>
+                <div class="mb-8 font-tertiary text-3xl mr-5">
+                 If you are going to use a passage of
+                  Lorem Ipsum, you need to be sure there isn't anything
+                  embarrassing hidden in the middle of text. All the Lorem Ipsum
+                  generators on the Internet tend to repeat predefined chunks as
+                  necessary, making this the first true generator on the
+                  Internet. 
                 </div>
                 <div class=" items-center mb-8 font-tertiary text-3xl mr-5">
                   <span>
                     Sed ut perspiciatis unde omnis iste natus error sit
                     voluptatem accusantium doloremque laudantium, totam rem
                     aperiam, eaque ipsa quae ab illo inventore veritatis et
-                    quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                    enim ipsam voluptatem quia voluptas sit aspernatur
+                    quasi architecto beatae vitae dicta sunt explicabo.
+                  </span>
+                </div>
+                <div class=" items-center mb-8 font-tertiary text-3xl mr-5">
+                  <span>
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur
                     voluptatem sequi nesciunt.
                   </span>
                 </div>

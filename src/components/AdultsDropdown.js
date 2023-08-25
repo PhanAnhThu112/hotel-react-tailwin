@@ -4,10 +4,10 @@ import { Menu } from "@headlessui/react";
 import { BsChevronDown } from "react-icons/bs";
 
 const lis = [
-  { name: "1 Adult" },
-  { name: "2 Adult" },
-  { name: "3 Adult" },
-  { name: "4 Adult" },
+  { name: "1 Adults" },
+  { name: "2 Adults" },
+  { name: "3 Adults" },
+  { name: "4 Adults" },
 ];
 
 const AdultsDropdown = () => {

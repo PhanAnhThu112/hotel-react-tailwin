@@ -121,7 +121,7 @@ const Signin = () => {
             </div>
             <button
               onClick={handleSignin}
-              className="w-full bg-black/90 font-tertiary text-white p-2 text-lg rounded-xl mb-6 hover:bg-accent hover hover:border hover:border-gray-300"
+              className="w-full bg-black/90 font-tertiary text-white p-2 text-lg rounded-xl mb-6 hover:bg-accent"
             >
               Sign in
             </button>
@@ -135,7 +135,19 @@ const Signin = () => {
                 <Link to="/SignUp">Sign up for free</Link>
               </span>
             </div>
+            <div className="text-center font-tertiary text-3xl">
+              <Link
+                to="/home"
+                className=" hover:text-sky-500 hover:underline"
+              >
+                <span className="mr-2" aria-label="Go back">
+                  {" "}
+                  &#8592;{" "}
+                </span>
+              </Link>
+            </div>
           </div>
+          
           {showModal && (
             <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/60">
               <div className="bg-white rounded-lg p-8">

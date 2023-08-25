@@ -9,7 +9,7 @@ const Footerhome = () => {
         <a href="/">
           <img src={LogoWhite} alt=''/>
         </a>
-        Copyright &copy; 2022. All rights reserved.
+        Copyright &copy; 2023. All rights reserved.
 
       </div>
 
