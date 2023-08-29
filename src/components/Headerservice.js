@@ -28,8 +28,8 @@ const Headerservice= () => {
         <Link to="/home" className='hover:text-accent text-xl transition'>Home</Link>
         <Link to="/about" className='hover:text-accent text-xl transition'>About </Link>
           <a href='/room' className='hover:text-accent text-xl transition'>Rooms</a>
-          <Link to="#Service" className='hover:text-accent text-xl transition'>Service</Link>
-          <a href='#Contact' className='hover:text-accent text-xl transition'>Contact</a>
+          <Link to="/service" className='hover:text-accent text-xl transition'>Service</Link>
+          <Link to="/contact" className='hover:text-accent text-xl transition'>Contact</Link>
           <div className="flex items-center hover:text-accent text-xl transition">
             <Link to="/signin" className="flex items-center">
               <FaUser className=''/> {/* Login icon */}

@@ -9,6 +9,8 @@ import SignUp from "./components/SignUp"
 import Aboutus  from "./components/Aboutus";
 import Headerservice from "./components/Headerservice";
 import SeeRoom from "./components/SeeRoom";
+import Service from "./components/Service";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/room" element={<SeeRoom/>} />
+        <Route path="/service" element={<Service/>} />
+        <Route path="/contact" element={<Contact/>} />
         <Route path="/room/:id" element={<RoomDetails />} />
         <Route path="/SignIn" element={<Signin />} />
         <Route path="/About" element={<Aboutus />} />
